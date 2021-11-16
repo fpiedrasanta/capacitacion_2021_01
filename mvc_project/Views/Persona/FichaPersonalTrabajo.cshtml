@@ -1,0 +1,23 @@
+﻿@model mvc_project.Models.ViewModels.FichaPersonalViewModel
+@{
+    ViewData["Title"] = "Ficha personal trabajo";
+}
+
+<center>
+    <h1>Ficha Personal</h1>
+    <h2>Ejemplo de herencia y polimorfismo</h2>
+</center>
+
+@if(Model != null && Model.Persona != null)
+{
+    <strong><span>Nombre: </span></strong>@Model.ObtenerNombre()<br>
+    <span>Apellido: </span>@Model.ObtenerApellido()<br>
+    <span>Altura: </span>@Model.ObtenerAltura()<br>
+    <span>Tipo de documento: </span>@Model.ObtenerTipoDocumento()<br>
+    <span>Número de documento: </span>@Model.ObtenerNumeroDocumento()<br>
+
+    <b>Datos laborales</b>
+    <strong><span>Domicilio: </span></strong>@Model.ObtenerDomicilioLaboral()<br>
+    <strong><span>Ingreso mensual: </span></strong>@Model.ObtenerIngresoMensual()<br>
+    <strong><span>Ingreso por hora: </span></strong>@Model.ObtenerValorHora()<br>
+}

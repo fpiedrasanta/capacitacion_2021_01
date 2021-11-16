@@ -1,0 +1,18 @@
+﻿@model mvc_project.Models.ViewModels.FichaPersonalViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<center>
+    <h1>Ficha Personal</h1>
+    <h2>Ejemplo de como construir una vista usando un ViewModel</h2>
+</center>
+
+@if(Model != null && Model.Persona != null)
+{
+    <strong><span>Nombre: </span></strong>@Model.Persona.Nombre<br>
+    <span>Apellido: </span>@Model.Persona.Apellido<br>
+    <span>Altura: </span>@Model.Persona.Altura.ToString("#0.00")<br>
+    <span>Tipo de documento: </span>@Model.Persona.TipoDocumento<br>
+    <span>Número de documento: </span>@Model.Persona.NumeroDocumento<br>
+}
