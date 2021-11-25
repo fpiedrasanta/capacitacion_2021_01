@@ -1,0 +1,14 @@
+﻿@using mvc_project.Models.ViewModels
+
+@model mvc_project.Models.ViewModels.EjemploStateViewModel
+@{
+    ViewData["Title"] = "Ejemplo state";
+}
+
+@foreach (DatoPropiedad datoPropiedad in Model.DatosPropiedad)
+{
+    <span style="color: @datoPropiedad.Color;"><strong>Est&aacute; disponible: </strong>@datoPropiedad.EstaDisponible</span>
+    <br>
+    <span style="color: @datoPropiedad.Color;"><strong>Descripción estado: </strong>@datoPropiedad.DescripcionEstado</span>
+    <hr>
+}
