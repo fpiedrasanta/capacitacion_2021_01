@@ -1,0 +1,14 @@
+﻿@using mvc_project.Models.ViewModels
+
+@model mvc_project.Models.ViewModels.EjemploDecoratorViewModel
+@{
+    ViewData["Title"] = "Ejemplo composite";
+}
+
+Lista Precio
+<hr>
+
+@foreach (var producto in @Model.Productos)
+{
+    <strong><span style="color:@producto.Color">Nombre: @(producto.Id) - @(producto.Nombre) -------- Precio: @(producto.Precio)</span></strong><hr/>
+}
