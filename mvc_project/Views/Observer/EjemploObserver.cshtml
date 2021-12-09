@@ -1,0 +1,16 @@
+﻿@using mvc_project.Models.DTO
+@using mvc_project.Models.ViewModels
+
+@model mvc_project.Models.ViewModels.EjemploObserverViewModel
+@{
+    ViewData["Title"] = "Ejemplo Observer";
+}
+
+<h2>Equipo</h2>
+@foreach(ModeloJugador modeloJugador in Model.ModeloEquipo.Jugadores)
+{
+    <hr>
+    <p><strong>Jugador dice: </strong>@modeloJugador.JugadorDice</p>
+    <a href='@Url.Content("~/Observer/CometiFalta")'>Cometí falta</a>
+    <hr>
+}
