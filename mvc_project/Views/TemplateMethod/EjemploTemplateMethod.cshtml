@@ -1,0 +1,17 @@
+﻿@using mvc_project.Models.ViewModels
+
+@model mvc_project.Models.ViewModels.EjemploTemplateMethodViewModel
+@{
+    ViewData["Title"] = "Ejemplo Template Method";
+}
+
+<strong>RESULTADO DE SU COBRO</strong>
+
+<hr>
+
+<ol>
+@foreach (string resultado in Model.Resultado)
+{
+    <li>@resultado</li>
+}
+</ol>
