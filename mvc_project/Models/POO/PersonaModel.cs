@@ -2,7 +2,7 @@ using System;
 
 namespace mvc_project.Models.POO
 {
-    public class PersonaModel
+    public class PersonaModel : ICloneable
     {
         public string Nombre { get; set; }
 
@@ -19,6 +19,8 @@ namespace mvc_project.Models.POO
         public OcupacionModel Ocupacion { get; set; }
 
         public Ocupacion2Model Ocupacion2 { get; set; }
+
+        public PersonaModel PersonaAnterior { get; set; }
 
         public string ObtenerNombreCompleto()
         {
@@ -58,6 +60,11 @@ namespace mvc_project.Models.POO
         public double ObtenerValorHora()
         {
             return this.Ocupacion != null ? this.Ocupacion.ObtenerValorHora() : 0;
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }

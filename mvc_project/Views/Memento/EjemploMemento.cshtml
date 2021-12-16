@@ -1,0 +1,25 @@
+﻿@using mvc_project.Models.POO
+
+@model mvc_project.Models.ViewModels.MementoViewModel
+@{
+    ViewData["Title"] = "Ejemplo Memento";
+}
+
+<hr>
+<h2>Datos de la persona</h2>
+<strong>Nombre: </strong>@Model.Persona.Nombre<br>
+<strong>Apellido: </strong>@Model.Persona.Apellido<br>
+<strong>TipoDocumento: </strong>@Model.Persona.TipoDocumento<br>
+</hr>
+<a href='@Url.Content("~/Memento/CambiarPersona")'>Cambiar persona</a> 
+<br>
+<br>
+<h3>Historial de cambios</h3>
+@foreach(PersonaModel personaModel in Model.HistorialPersona)
+{
+    <hr>
+    <strong>Nombre: </strong>@personaModel.Nombre<br>
+    <strong>Apellido: </strong>@personaModel.Apellido<br>
+    <strong>TipoDocumento: </strong>@personaModel.TipoDocumento<br>
+    <hr>
+}
